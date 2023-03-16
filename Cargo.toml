@@ -1,7 +1,13 @@
 [package]
 name = "aliyun_dns"
 version = "0.1.0"
+authors = ["deadash <dead.ash@hotmail.com>"]
 edition = "2021"
+description = "A Rust library for working with the Aliyun DNS API"
+repository = "https://github.com/yourusername/aliyun_dns"
+license = "MIT"
+readme = "README.md"
+
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
