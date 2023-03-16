@@ -61,15 +61,15 @@
 //! }
 //! ```
 //!
-//! For more examples, please refer to the [`examples`](https://github.com/deadash/aliyun_dns/tree/main/examples) directory in the repository.
+//! For more examples, please refer to the [`examples`](https://github.com/edsky/aliyun_dns/tree/main/examples) directory in the repository.
 //!
 //! ## License
 //!
 //! This crate is licensed under the MIT License.
 //!
-//! For more information, see the [`LICENSE`](https://github.com/deadash/aliyun_dns/blob/main/LICENSE) file in the repository.
+//! For more information, see the [`LICENSE`](https://github.com/edsky/aliyun_dns/blob/main/LICENSE) file in the repository.
 //!
-//! [![GitHub license](https://img.shields.io/github/license/deadash/aliyun_dns)](https://github.com/deadash/aliyun_dns/blob/main/LICENSE)
+//! [![GitHub license](https://img.shields.io/github/license/edsky/aliyun_dns)](https://github.com/edsky/aliyun_dns/blob/main/LICENSE)
 //!
 //! ## Contributing
 //!
@@ -77,7 +77,7 @@
 //!
 //! ## Additional Documentation
 //!
-//! The full API documentation can be found [here](https://deadash.github.io/aliyun_dns/).
+//! The full API documentation can be found [here](https://github.com/edsky/aliyun_dns/).
 //!
 //! For more information on the Aliyun DNS API, please refer to the [official Aliyun DNS API documentation](https://www.alibabacloud.com/help/doc-detail/29739.htm).
 //!
