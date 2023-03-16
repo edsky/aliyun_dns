@@ -117,9 +117,10 @@
 // Include the rest of the crate's implementation here.
 use anyhow::{Context, Result};
 use chrono::Utc;
-use crypto::{hmac::Hmac, sha1::Sha1, mac::Mac};
+use hmac::{Hmac, Mac};
 use reqwest::{Client, Response};
 use serde::Deserialize;
+use sha1::Sha1;
 use std::collections::HashMap;
 use url::Url;
 use base64::Engine;
@@ -472,10 +473,10 @@ impl AliyunDns {
             percent_encode(&canonical_query_string)
         );
         let signature_key = format!("{}&", self.access_key_secret);
-        let mut mac = Hmac::new(Sha1::new(),signature_key.as_bytes());
-        mac.input(string_to_sign.as_bytes());
-        let result = mac.result();
-        let signature = base64::engine::general_purpose::STANDARD.encode(result.code());
+        let mut mac = Hmac::<Sha1>::new_from_slice(signature_key.as_bytes()).unwrap();
+        mac.update(string_to_sign.as_bytes());
+        let result = mac.finalize();
+        let signature = base64::engine::general_purpose::STANDARD.encode(result.into_bytes());
     
         signature
     }
