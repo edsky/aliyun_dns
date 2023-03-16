@@ -1,0 +1,16 @@
+[package]
+name = "aliyun_dns"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1.26", features = ["full"] }
+anyhow = "1.0"
+url = "2.3"
+base64 = "0.21"
+rand = "0.8.5"
+chrono = "0.4"
+rust-crypto = "0.2.36"
