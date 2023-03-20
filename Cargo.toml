@@ -1,6 +1,6 @@
 [package]
 name = "aliyun_dns"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["edsky <dead.ash@hotmail.com>"]
 edition = "2021"
 description = "A Rust library for working with the Aliyun DNS API"
