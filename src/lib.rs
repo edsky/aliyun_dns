@@ -523,5 +523,33 @@ impl AliyunDns {
 }
 
 fn percent_encode(input: &str) -> String {
-    url::form_urlencoded::byte_serialize(input.as_bytes()).collect::<String>()
+    let mut encoded = String::new();
+    for byte in input.as_bytes() {
+        if *byte == b'*' {
+            encoded.push_str("%2A");
+        } else {
+            let temp = url::form_urlencoded::byte_serialize(&[*byte]).collect::<String>();
+            encoded.push_str(&temp);
+        }
+    }
+    encoded
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_percent_encode() {
+        assert_eq!(percent_encode("hello"), "hello".to_string());
+        assert_eq!(percent_encode("a/b"), "a%2Fb".to_string());
+        assert_eq!(percent_encode("a+b"), "a%2Bb".to_string());
+        assert_eq!(percent_encode("a b"), "a+b".to_string());
+        assert_eq!(percent_encode("*"), "%2A".to_string());
+        assert_eq!(percent_encode("%"), "%25".to_string());
+        assert_eq!(
+            percent_encode("你好"),
+            "%E4%BD%A0%E5%A5%BD".to_string()
+        );
+    }
 }
